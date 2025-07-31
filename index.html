@@ -435,10 +435,8 @@
         }
 
         .left-controls {
-          flex-direction: column;
           gap: 15px;
           justify-content: center;
-          align-items: flex-start;
           padding-left: 20px;
         }
 
@@ -512,9 +510,10 @@
         }
 
         .speed-controls {
-          position: static;
+          position: relative;
           transform: none;
-          left: auto;
+          top: 2rem;
+          left: 0;
           border: none;
           background: rgba(0, 0, 0, 0.5);
           padding: 5px 15px;
@@ -545,14 +544,7 @@
         }
 
         .active-commands {
-          position: fixed;
-          left: 15px;
-          background: rgba(0, 0, 0, 0.7);
-          padding: 8px 12px;
-          border-radius: 12px;
-          font-size: 0.7rem;
-          min-width: 120px;
-          z-index: 40;
+        display: none;
         }
 
         .status-message {
@@ -687,9 +679,9 @@
           id="speedSlider"
           min="0"
           max="255"
-          value="200"
+          value="255"
         />
-        <span class="speed-label" id="speedValue">200</span>
+        <span class="speed-label" id="speedValue">255</span>
       </div>
     </div>
 
@@ -716,7 +708,7 @@
             <div class="speed-bar">
               <div class="speed-fill" id="speedFill"></div>
             </div>
-            <div class="speed-display" id="speedDisplay">200</div>
+            <div class="speed-display" id="speedDisplay">255</div>
             <div class="speed-unit">SPEED</div>
             <div class="gear-info">
               <span>RPM: <span id="rpm">0</span></span>
@@ -777,7 +769,7 @@
       const activeCommands = document.getElementById("activeCommands");
 
       let isConnected = false;
-      let currentSpeed = 200;
+      let currentSpeed = 255;
       let activeButtons = new Set();
       let currentCommands = [];
 
