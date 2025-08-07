@@ -23,7 +23,7 @@
 // bool motorsEnabled = true;
 
 // // WiFi AP credentials
-// const char* ssid = "TasminaDon";
+// const char* ssid = "Car_Name";
 // const char* password = "12345678";
 
 // int getSpeedFromState(String state) {
